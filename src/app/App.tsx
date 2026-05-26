@@ -83,81 +83,81 @@ const experiences = [
   {
     id: 1,
     title: "India Rising Techventure – Vidyashilp University",
-    category: "Engineering",
     description: "Secured first place in the India Rising Techventure competition, in a Shark Tank. Our project was based on developing agricultural drones designed to be more accessible and practical for farmers while reducing the manual effort and improving productivity. Developed affordable agricultural drones designed to help farmers monitor crops, and spray fields. The project focused heavily on accessibility and reducing costs compared to existing agricultural drone systems.",
     tag: "AgriTech",
+    colorClass: "bg-emerald-50 text-emerald-700 border-emerald-200",
     Icon: Cpu,
   },
   {
     id: 2,
     title: "INSEF (Indian National Science & Engineering Fair)",
-    category: "Chemistry",
     description: "Successfully cleared the first round of INSEF and progressed to the second round with a project I created called the Eco-Catalyst. The project focused in the field of chemistry on redesigning the catalytic converter system used in car exhausts. Instead of only reducing harmful gases, the Eco-Catalyst aimed to convert carbon dioxide emissions into methane, which could potentially be reused as fuel for the vehicle itself. Participating in the competition gave me exposure to how scientific projects are created in research-focused environments.",
     tag: "Chemistry",
+    colorClass: "bg-lime-50 text-lime-700 border-lime-200",
     Icon: FlaskConical,
   },
   {
     id: 3,
     title: "The Midnight Sun — Lomonosov Moscow State University",
-    category: "Physics",
     description: "Won first place in the initial round of an international competition with a project called The Midnight Sun. Built on a strict ₹1,400 budget, this is a thermoelectric generator, focused on physics and generating electricity at night by using temperature differences between surfaces and the surrounding environment. The project explored alternative approaches to renewable energy generation and energy sustainability beyond traditional solar power systems. Following the competition, I was invited to participate in the next round in Russia.",
     tag: "Physics",
+    colorClass: "bg-purple-50 text-purple-700 border-purple-200",
     Icon: Atom,
   },
   {
     id: 4,
     title: "Tinkerfest – Chaman Bhartiya School",
-    category: "Innovation",
     description: "Volunteered at Tinkerfest and also participated by creating a project that received an investment of ₹15,000 in a Shark. The event involved presenting ideas, interacting with judges and participants, and working collaboratively with your teammates. Volunteering also allowed me to observe how large-scale events are organized and managed.",
     tag: "Leadership",
+    colorClass: "bg-amber-50 text-amber-700 border-amber-200",
     Icon: Lightbulb,
   },
   {
     id: 5,
     title: "Stonehill Science Bowl",
-    category: "Sciences",
     description: "Participated in the Stonehill Science Bowl, which had fast-paced scientific questioning and collaborative problem solving across multiple areas of science. The competition required quick thinking, teamwork, and the ability to apply scientific knowledge under pressure.",
     tag: "Sciences",
+    colorClass: "bg-blue-50 text-blue-700 border-blue-200",
     Icon: Atom,
   },
   {
     id: 6,
     title: "Stonehill Technofest",
-    category: "Technology",
     description: "Participated in Stonehill Technofest with a project about a smart dog collar capable of detecting seizures in dogs. The collar is designed to monitor changes in movement and behavior patterns that could indicate seizure activity, helping owners respond more quickly during emergencies. Working on the project allowed me to further explore how technology can be applied to health and safety even for animals. This competition showed me how to be able to work under pressure with a time limit.",
     tag: "Hardware",
+    colorClass: "bg-orange-50 text-orange-700 border-orange-200",
     Icon: Activity,
   },
   {
     id: 7,
     title: "Harvard Crimson Business Competition",
-    category: "Business",
     description: "Won a Harvard-associated competition and received an invitation related to the event. Successfully cleared the second round of the Harvard Crimson Business Competition and received an invitation to participate in the next round at Harvard University in the United States. Participating in the competition motivated me to continue exploring opportunities that combine innovation, entrepreneurship, and practical problem solving.",
     tag: "Business",
+    colorClass: "bg-indigo-50 text-indigo-700 border-indigo-200",
     Icon: Award,
   },
   {
     id: 8,
     title: "Interhouse Debate – Chaman Bhartiya School",
-    category: "Debate",
     description: "Received the “Best Speaker” award in an interhouse debate competition. This competition improved my ability to present ideas clearly in front of an audience. Winning this made me realize that being confident doesn't mean being sure you're right, it means being okay with saying what you think out loud.",
     tag: "Public Speaking",
+    colorClass: "bg-rose-50 text-rose-700 border-rose-200",
     Icon: MessageSquare,
   },
   {
     id: 9,
     title: "CBS Triumph Chess Competition",
-    category: "Strategy",
     description: "Won second place in the CBS Triumph Chess Competition. Participating in chess competitions are a funny kind of stressful, they are completely silent, and completely in your head. Every mistake is yours. I kind of like that, though.",
     tag: "Strategy",
+    colorClass: "bg-slate-100 text-slate-700 border-slate-300",
     Icon: Target,
   },
   {
     id: 10,
     title: "Extra Match Classes",
-    category: "Teaching",
     description: "Helped teach math concepts to sixth graders after school under the guidance of my math teacher. Teaching younger students helped me better understand mathematical concepts and improve my communication skills.",
     tag: "Education",
+    colorClass: "bg-teal-50 text-teal-700 border-teal-200",
     Icon: BookOpen,
   }
 ];
@@ -385,28 +385,59 @@ export default function App() {
                   But I'm not just a science person, I am also deeply interested in art. I draw, paint, do textured art, crochet, knit, macramé, dance, and play the piano. Honestly, I think my creative side and my science side help each other. When I'm crocheting something tricky, I'm problem-solving. When I'm painting, I notice tiny details I'd miss otherwise. The patience I build doing art is the same patience I need during a chess game or when a science project isn't working. I read a lot too. Science books, psychology, some self-improvement, and fantasy fiction when I need a break from reality. Everything I do kind of comes from the same reason — I just really like understanding how things work. And then there's badminton — which is the opposite of patience. It's fast and loud and my brain kind of shuts off in a good way, it helps me stay active and focused. Chess is the other end — slow, quiet, everything happening inside your head. It challenges me to think strategically, stay patient, and analyze situations carefully. I like that I need both.
                 </p>
               </Reveal>
+              
               <Reveal delay={380}>
-                <div className="grid grid-cols-2 gap-4">
-                  {[
-                    { Icon: MapPin, text: "Bangalore, India" },
-                    { Icon: BookOpen, text: "Grade 10, IB Programme" },
-                    { Icon: Code, text: "Creative Arts" },
-                    { Icon: Atom, text: "Sciences" },
-                  ].map(({ Icon, text }) => (
-                    <div
-                      key={text}
-                      className="flex items-center gap-2.5 text-sm text-muted-foreground"
-                    >
-                      <Icon size={14} className="text-accent flex-shrink-0" />
-                      {text}
+                {/* Location and Education Tags */}
+                <div className="flex flex-wrap gap-6 mb-8">
+                  <div className="flex items-center gap-2.5 text-sm text-muted-foreground">
+                    <MapPin size={16} className="text-accent flex-shrink-0" />
+                    Bangalore, India
+                  </div>
+                  <div className="flex items-center gap-2.5 text-sm text-muted-foreground">
+                    <BookOpen size={16} className="text-accent flex-shrink-0" />
+                    Grade 10, IB Programme
+                  </div>
+                </div>
+
+                {/* Sciences & Arts Detailed Blocks */}
+                <div className="grid sm:grid-cols-2 gap-5">
+                  <div className="bg-card border border-border rounded-xl p-5 shadow-sm">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="p-2 rounded-md bg-blue-50/50">
+                        <Atom size={16} className="text-blue-600" />
+                      </div>
+                      <h4 className="font-display font-medium text-foreground">Sciences</h4>
                     </div>
-                  ))}
+                    <div className="flex flex-wrap gap-2">
+                      {["Chemistry", "Physics", "Biology", "Astronomy", "Psychology", "AI & Technology"].map((tag) => (
+                        <span key={tag} className="px-2.5 py-1 bg-secondary text-secondary-foreground text-xs rounded-md border border-border">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="bg-card border border-border rounded-xl p-5 shadow-sm">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="p-2 rounded-md bg-rose-50/50">
+                        <Code size={16} className="text-rose-600" />
+                      </div>
+                      <h4 className="font-display font-medium text-foreground">Creative Arts</h4>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {["Drawing", "Painting", "Textured Art", "Crochet", "Knitting", "Macramé", "Dance", "Piano"].map((tag) => (
+                        <span key={tag} className="px-2.5 py-1 bg-secondary text-secondary-foreground text-xs rounded-md border border-border">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </Reveal>
             </div>
 
             <Reveal from="right" delay={120}>
-              <div className="relative">
+              <div className="relative mt-8 md:mt-0">
                 <img
                   src="/galaxy-math.jpg"
                   alt="Galaxy with mathematical equations"
@@ -438,14 +469,10 @@ export default function App() {
             {experiences.map((exp, i) => (
               <Reveal key={exp.id} delay={(i % 3) * 110} from="bottom">
                 <div className="group bg-card border border-border rounded-xl p-6 hover:shadow-lg hover:border-accent/25 transition-all duration-300 h-full flex flex-col cursor-default">
-                  <div className="flex items-start justify-between mb-5">
+                  <div className="flex items-start justify-between mb-4">
                     <div className="p-2.5 rounded-lg bg-accent/10">
                       <exp.Icon size={19} className="text-accent" />
                     </div>
-                  </div>
-
-                  <div className="font-mono text-[11px] text-accent uppercase tracking-[0.12em] mb-2">
-                    {exp.category}
                   </div>
 
                   <h3 className="font-display text-[15px] font-semibold leading-snug mb-3 group-hover:text-accent transition-colors duration-200">
@@ -457,7 +484,7 @@ export default function App() {
                   </p>
 
                   <div className="mt-5 flex flex-wrap gap-1.5">
-                    <span className="text-[11px] font-mono px-2 py-0.5 bg-muted text-muted-foreground rounded">
+                    <span className={`text-[11px] font-mono px-2 py-0.5 rounded border ${exp.colorClass}`}>
                       {exp.tag}
                     </span>
                   </div>
