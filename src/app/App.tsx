@@ -578,7 +578,7 @@ export default function App() {
                 <div className="flex flex-col gap-1">
                   <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest">Phone</span>
                   <div className="flex flex-col gap-1">
-                    <a href="tel:8019867512" className="text-white hover:text-accent transition-colors text-lg">8019867512</a>
+                    <a href="tel:8019867512" className="text-white hover:text-accent transition-colors text-lg">80198 67512</a>
                     <a href="tel:8074214378" className="text-white hover:text-accent transition-colors text-lg">80742 14378</a>
                   </div>
                 </div>
